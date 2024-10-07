@@ -64,6 +64,12 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: $MONGO_PASSWORD
     networks:
       - kafka-net
+    volumes:
+      - db_data:/data/db
 
 networks:
   kafka-net:
+
+volumes:
+  db_data:
+    driver: local
